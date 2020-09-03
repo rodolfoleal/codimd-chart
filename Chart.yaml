@@ -1,0 +1,19 @@
+apiVersion: v2
+name: codimd
+description: CodiMD chart
+
+type: application
+
+version: 0.1.0
+
+appVersion: 2.2.0
+
+dependencies:
+  - name: postgresql
+    version: 7.x.x
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    condition: postgresql.enabled
+    tags:
+      - services
+      - db
+      - write

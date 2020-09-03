@@ -1,0 +1,57 @@
+replicaCount: 1
+
+image:
+  repository: "nabo.codimd.dev/hackmdio/hackmd"
+  pullPolicy: IfNotPresent
+  tag: "2.2.0"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: true
+  host: codimd.local
+
+resources: {}
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+postgresql:
+  persistence:
+    enabled: true
+    existingClaim: postgres-pvc
+  volumePermissions:
+    enabled: true
+  replication:
+    enabled: false
+  volumeSize: 5Gi
+  postgresqlUsername: admin
+  postgresqlPassword: admin
+  postgresqlDatabase: codimd
+  
