@@ -35,7 +35,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: CMD_DB_URL
-              value: "postgres://{{ .Values.postgresql.postgresqlUsername }}:{{ .Values.postgresql.postgresqlPassword }}@{{ include "chart.fullname" . }}-postgresql/codimd"
+              value: "postgres://{{ .Values.postgresql.postgresqlUsername }}:{{ empty .Values.postgresql.postgresqlPassword | ternary .Values.postgresql.existingSecret .Values.postgresql.postgresqlPassword  }}@{{ include "chart.fullname" . }}-postgresql/codimd"
             - name: CMD_USECDN
               value: "false"
           ports:
