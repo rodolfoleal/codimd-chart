@@ -18,6 +18,6 @@ entries:
     name: codimd
     type: application
     urls:
-    - https://rodolfoleal.github.io/codimd-chart/codimd-0.1.0.tgz
+    - https://rodolfoleal.github.io/codimd-chart/helm/codimd-0.1.0.tgz
     version: 0.1.0
 generated: "2020-09-05T11:41:57.752442535-03:00"
