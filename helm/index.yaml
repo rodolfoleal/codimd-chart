@@ -1,0 +1,23 @@
+apiVersion: v1
+entries:
+  codimd:
+  - apiVersion: v2
+    appVersion: 2.2.0
+    created: "2020-09-05T11:41:57.755621821-03:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      tags:
+      - services
+      - db
+      - write
+      version: 7.x.x
+    description: CodiMD chart
+    digest: 42351f61af8f767442a2e2eff9826564b3bb72e30b854ec0d8567f81e4de6aff
+    name: codimd
+    type: application
+    urls:
+    - https://rodolfoleal.github.io/codimd-chart/codimd-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-09-05T11:41:57.752442535-03:00"
